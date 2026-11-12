@@ -1,0 +1,981 @@
+/* Fonts (this line loads the fonts, keep it at the very top) */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@600;700&family=Nunito:wght@400;600;700&display=swap');
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* main background colour of the whole page (white) */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+    color: #2e0f3a;
+    overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 40px;
+    background-color: #2a0a36;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    font-weight: normal;
+    color: #ffc23c;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 10px 22px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+/* hover: zoom + gold background */
+.nav-links li:hover {
+    transform: scale(1.12);
+    background-color: #ffc23c;
+    color: #2a0a36;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 110px 60px 50px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(135deg, #2a0a36, #6b1d5c);
+    color: white;
+    overflow: hidden;
+}
+
+/* left side */
+.hero-left {
+    width: 50%;
+    text-align: left;
+}
+
+.hero-small {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #ffc23c;
+    margin-bottom: 14px;
+}
+
+/* heading font */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+/* content font */
+.hero-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    color: #f3dcef;
+}
+
+.hero-button {
+    background-color: #ffc23c;
+    color: #2a0a36;
+    border: none;
+    padding: 14px 34px;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hero-button:hover {
+    background-color: white;
+}
+
+/* right side */
+.hero-right {
+    width: 50%;
+}
+
+/* ---------- Carousel ---------- */
+.carousel {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    perspective: 1000px;
+}
+
+.carousel-stage {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    touch-action: pan-y;
+}
+
+/* every sweet image sits in the center, javascript moves it */
+.carousel-img {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 210px;
+    height: 210px;
+    margin-left: -105px;
+    object-fit: contain;
+    cursor: pointer;
+    user-select: none;
+}
+
+.carousel-info {
+    margin-top: 10px;
+}
+
+.carousel-name {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    font-weight: normal;
+    color: #ffc23c;
+}
+
+.carousel-text {
+    margin-top: 6px;
+    font-size: 15px;
+    color: #f3dcef;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #a470a0;
+    cursor: pointer;
+}
+
+.dot-active {
+    background-color: #ffc23c;
+}
+
+/* ---------- Content cards (no images) ---------- */
+.features-section {
+    padding: 90px 40px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #2a0a36;
+}
+
+.section-sub {
+    margin-top: 8px;
+    margin-bottom: 50px;
+    font-size: 17px;
+    color: #6b4a68;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #f9f1fb;
+    padding: 32px 24px;
+    border-radius: 16px;
+    border-top: 5px solid #ffc23c;
+    text-align: left;
+}
+
+.feature-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #6b1d5c;
+    margin-bottom: 10px;
+}
+
+.feature-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5a4358;
+}
+
+/* ---------- Products ---------- */
+.products-section {
+    padding: 80px 40px;
+    text-align: center;
+    scroll-margin-top: 60px;
+}
+
+/* 3 cards in one line */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(42, 10, 54, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 36px rgba(42, 10, 54, 0.22);
+}
+
+/* image box hides the extra part when image zooms */
+.product-img-box {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s;
+}
+
+/* zoom on hover */
+.product-card:hover .product-img {
+    transform: scale(1.15);
+}
+
+.product-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #ffc23c;
+    color: #2a0a36;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.product-body {
+    padding: 22px;
+}
+
+.product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #2a0a36;
+    margin-bottom: 8px;
+}
+
+.product-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #6b4a68;
+    margin-bottom: 18px;
+}
+
+.product-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #6b1d5c;
+}
+
+.product-button {
+    background-color: #2a0a36;
+    color: #ffc23c;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-button:hover {
+    background-color: #6b1d5c;
+}
+
+/* ---------- About ---------- */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    scroll-margin-top: 60px;
+}
+
+.about-image-box {
+    width: 45%;
+}
+
+/* image height is fixed so it matches the content */
+.about-img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0 16px 36px rgba(42, 10, 54, 0.25);
+}
+
+.about-content {
+    width: 55%;
+}
+
+.about-small {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #b0307f;
+    margin-bottom: 10px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 1.3;
+    color: #2a0a36;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5a4358;
+    margin-bottom: 14px;
+}
+
+/* ---------- Contact ---------- */
+.contact-section {
+    padding: 90px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #2a0a36, #6b1d5c);
+    scroll-margin-top: 60px;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: white;
+}
+
+.contact-sub {
+    margin-top: 8px;
+    margin-bottom: 40px;
+    font-size: 17px;
+    color: #f3dcef;
+}
+
+.contact-form {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 36px 32px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: left;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2a0a36;
+}
+
+.form-input {
+    width: 100%;
+    padding: 13px 16px;
+    margin-bottom: 20px;
+    border: 2px solid #eadcec;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #ffc23c;
+}
+
+.form-textarea {
+    height: 120px;
+    resize: none;
+}
+
+.form-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #ffc23c;
+    color: #2a0a36;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #2a0a36;
+    color: #ffc23c;
+}
+
+.form-success {
+    margin-top: 16px;
+    text-align: center;
+    font-weight: 700;
+    color: #2e8b57;
+}
+
+/* ---------- Diwali Sale ---------- */
+.diwali-section {
+    padding: 80px 20px 20px 20px;
+    scroll-margin-top: 60px;
+}
+
+.diwali-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    background: linear-gradient(135deg, #b0307f, #ff8a3c);
+    border-radius: 30px;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(176, 48, 127, 0.35);
+}
+
+.diwali-left {
+    width: 55%;
+}
+
+.diwali-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    margin-bottom: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.diwali-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.diwali-big {
+    margin: 6px 0 14px 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 36px;
+    color: #ffe27a;
+}
+
+.diwali-text {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.diwali-offers {
+    margin-bottom: 20px;
+}
+
+.diwali-offer {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.diwali-code {
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.diwali-code span {
+    padding: 6px 16px;
+    margin-left: 6px;
+    background-color: white;
+    border-radius: 8px;
+    color: #b0307f;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.diwali-button {
+    padding: 14px 38px;
+    background-color: #2a0a36;
+    color: #ffc23c;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.diwali-button:hover {
+    transform: scale(1.08);
+}
+
+/* right side images */
+.diwali-right {
+    position: relative;
+    width: 40%;
+}
+
+.diwali-main-img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 6px solid white;
+    transform: rotate(3deg);
+    display: block;
+}
+
+/* small sweets floating on the image */
+.diwali-float {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    animation: floatUp 3s ease-in-out infinite;
+}
+
+.diwali-float-one {
+    top: -30px;
+    left: -30px;
+}
+
+.diwali-float-two {
+    bottom: -25px;
+    right: -20px;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ---------- EatSweet order section ---------- */
+.order-section {
+    padding: 90px 20px;
+    scroll-margin-top: 60px;
+}
+
+.order-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #ffc23c, #ff8a3c);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(255, 138, 60, 0.4);
+}
+
+.order-small {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #6b1d5c;
+    margin-bottom: 10px;
+}
+
+.order-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    line-height: 1.3;
+    color: #2a0a36;
+    margin-bottom: 14px;
+}
+
+.order-text {
+    max-width: 500px;
+    margin: 0 auto 32px auto;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #4a1f3d;
+}
+
+/* premium button */
+.eat-button {
+    padding: 18px 60px;
+    background: linear-gradient(135deg, #2a0a36, #6b1d5c);
+    color: #ffc23c;
+    border: 2px solid #2a0a36;
+    border-radius: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(42, 10, 54, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.eat-button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 16px 32px rgba(42, 10, 54, 0.5);
+}
+
+/* ---------- Order placed popup ---------- */
+.popup-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+}
+
+.popup-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 24px;
+}
+
+.popup-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #2a0a36;
+    margin-bottom: 12px;
+}
+
+.popup-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #5a4358;
+    margin-bottom: 24px;
+}
+
+.popup-button {
+    padding: 12px 36px;
+    background-color: #2a0a36;
+    color: #ffc23c;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    padding: 60px 40px 20px 40px;
+    background-color: #2a0a36;
+    color: white;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    width: 25%;
+}
+
+.footer-logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    font-weight: normal;
+    color: #ffc23c;
+    margin-bottom: 14px;
+}
+
+.footer-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #ffc23c;
+}
+
+.footer-text {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e3c6df;
+}
+
+.footer-link {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #e3c6df;
+    cursor: pointer;
+    transition: padding-left 0.3s, color 0.3s;
+}
+
+.footer-link:hover {
+    color: #ffc23c;
+    padding-left: 6px;
+}
+
+/* instagram and whatsapp icons */
+.social-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.social-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffc23c;
+    border-radius: 50%;
+    color: #ffc23c;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #ffc23c;
+    color: #2a0a36;
+    transform: translateY(-4px);
+}
+
+.social-svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #5a2a6a;
+    text-align: center;
+    font-size: 14px;
+    color: #c7a5c2;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1000px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 800px) {
+    .navbar {
+        padding: 12px 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links li {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 100px 20px 40px 20px;
+    }
+
+    .hero-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .carousel-stage {
+        height: 250px;
+    }
+
+    .carousel-img {
+        width: 170px;
+        height: 170px;
+        margin-left: -85px;
+    }
+
+    .features-section {
+        padding: 60px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-section {
+        padding: 60px 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+
+    .about-image-box {
+        width: 100%;
+    }
+
+    .about-img {
+        height: 300px;
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+    .diwali-box {
+        flex-direction: column;
+        padding: 40px 24px;
+    }
+
+    .diwali-left {
+        width: 100%;
+    }
+
+    .diwali-right {
+        width: 80%;
+    }
+
+    .diwali-title {
+        font-size: 38px;
+    }
+
+    .order-title {
+        font-size: 28px;
+    }
+
+    .footer {
+        padding: 50px 20px 20px 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        width: 100%;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
+    }
+}
